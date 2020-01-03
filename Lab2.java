@@ -4,10 +4,32 @@ public class Lab2
   {
     Robot.load("square.txt");
     Robot.setDelay(0.1);
-    
-    //INSERT CODE HERE
+    cleanLine();
+    Robot.turnLeft();
+    cleanLine();
+    Robot.turnLeft();
+    cleanLine();
+    Robot.turnLeft();
+    cleanLine();
   }
   
+  public static void cleanLine()
+  {
+     //precondition: Robot is facing a line of dirty squares
+     //postcondition: Robot is on a clean square, having just cleaned a line of dirty squares
+     Robot.move();
+     Robot.makeLight();
+     Robot.move();
+     Robot.makeLight();
+     Robot.move();
+     Robot.makeLight();
+     Robot.move();
+     Robot.makeLight();
+     Robot.move();
+     Robot.makeLight();
+     Robot.move();
+    }
+    
   public static void darkenComb()
   {
     Robot.load("comb.txt");
@@ -23,4 +45,5 @@ public class Lab2
     
     //INSERT CODE HERE
   }
+  
 }
