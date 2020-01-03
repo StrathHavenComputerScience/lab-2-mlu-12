@@ -108,7 +108,48 @@ public class Lab2
     Robot.load("blank.txt");
     Robot.setDelay(0.05);
     
-    //INSERT CODE HERE
+    checker2Lines();
+    checker2Lines();
+    checker2Lines();
+    checkerLine();
+    turnRight();
+    Robot.move();
+    turnRight();
+    checkerLine();
   }
   
+  public static void checker2Lines()
+  {
+     //precondition: Robot is standing in a line of clean squares, with a line of clean squares to its right
+     //postcondition: Robot has moved over two vertical lines, having checkered the two lines to its left
+     checkerLine();
+     turnRight();
+     Robot.move();
+     turnRight();
+     checkerLine();
+     Robot.turnLeft();
+     Robot.move();
+     Robot.turnLeft();
+    }
+  
+  public static void checkerLine()
+  {
+     //precondition: Robot is standing on a line of completely clean squares
+     //postcondition: Robot has just checkered the line of clean squares
+     checkerPattern();
+     checkerPattern();
+     checkerPattern();
+     Robot.makeDark();
+     Robot.move();
+    }
+    
+  public static void checkerPattern()
+  {
+     //precondition: Robot is standing on a clean square
+     //postcondition: Robot is standing on a clean square, after darkening 
+     Robot.makeDark();
+     Robot.move();
+     Robot.move();
+    }
+    
 }
